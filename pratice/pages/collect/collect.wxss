@@ -1,0 +1,64 @@
+/* pages/collect/collect.wxss */
+/* pages/publish/publish.wxss */
+.list-item {
+  display: flex;
+  flex-direction: column;
+  padding: 25rpx 0;
+  width: 100%;
+  margin-bottom: 20rpx;
+  background: #f1f1f8;
+  margin: 10px 15px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.log-item {
+  margin: 10rpx;
+}
+
+.container {
+  padding: 45rpx;
+
+}
+
+.publish {
+  position: fixed;
+  left: 0;
+  width: 100% !important;
+  bottom: 0;
+  /* background-color: #ffda45 !important; */
+  background-color: #776bff !important;
+  color: white;
+  border-radius: 0;
+
+}
+
+.title {
+  font-size: 12px;
+  margin-left: 15rpx;
+  width: 400rpx;
+  display: block;
+  /*内联对象需加*/
+  word-break: keep-all;
+  /* 不换行 */
+  white-space: nowrap;
+  /* 不换行 */
+  overflow: hidden;
+  /* 内容超出宽度时隐藏超出部分的内容 */
+  text-overflow: ellipsis;
+}
+
+.oper1 {
+  position: absolute;
+  right: 15rpx;
+  top: 25rpx;
+  color:#ffc34d;
+  font-size: 12px;
+}
+.oper2 {
+  position: absolute;
+  right: 80rpx;
+  top: 25rpx;
+  color:#ffc34d;
+  font-size: 12px;
+}

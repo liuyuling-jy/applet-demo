@@ -1,0 +1,21 @@
+<!--pages/publish/publish.wxml-->
+<view class="container">
+	<!-- <dialog id='dialog' 
+      title='我是标题' 
+      content='恭喜你，学会了小程序组件' 
+      cancelText='知道了' 
+      confirm='谢谢你'
+      bind:cancelEvent="_cancelEvent"  
+      bind:confirmEvent="_confirmEvent">
+</dialog> -->
+	<!-- <button type="primary" bindtap="showDialog"> ClickMe! </button> -->
+	<block wx:for="{{list}}" wx:for-item="item">
+		<view class="list-item">
+			<text class="title">{{item.title}}</text>
+			<!-- <text wx:if="{{item.anonymity==='2'}}">（作者：{{item.author}}）</text> -->
+			<!-- <text data-status='{{item._id}}' catchtap="edit" class="oper1">编辑</text> -->
+			<text data-status='{{item._id}}' bindtap="detail" class="oper1">详情</text>
+		</view>
+	</block>
+	<button class="publish" bindtap="publish">去发布</button>
+</view>

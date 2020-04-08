@@ -1,0 +1,35 @@
+/* pages/detail/detail.wxss */
+.formStyle {
+  padding: 20px 20px 60px 20px;
+  /* font-family: '楷体'; */
+}
+
+.publish {
+  position: fixed;
+  left: 0;
+  width: 100% !important;
+  bottom: 0;
+  background-color:#ffc34d !important;
+  z-index: 99;
+  color: white;
+  border-radius: 0;
+}
+
+.section {
+  padding: 10px 0;
+}
+
+.section__title {
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.radio-group-label {
+  margin-right: 60rpx;
+}
+
+input,
+textarea {
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}

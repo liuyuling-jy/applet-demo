@@ -1,0 +1,21 @@
+<!--pages/detailItem/detailItem.wxml-->
+<!--pages/detail/detail.wxml-->
+<view class="formStyle">
+	<view class="section">
+		<text class="section__title"><text class="title">标题：</text>{{data.title}}</text>
+		<text class="section__title"><text class="title">分类：</text>{{data.classify==='0'?'Angular':data.classify==='1'?'Vue':'React'}}</text>
+		<text class="section__title" wx:if="{{type==='2'}}"><text class="title">作者：</text>{{data.anonymity==='2'?data.author:'匿名'}}</text>
+		<!-- <text class="section__title" wx:if="{{data.anonymity==='1'}}&&{{data.type===2}}"><text class="title">作者：</text>匿名</text> -->
+		<text class="section__title"><text class="title">内容：</text>{{data.desc}}</text>
+	</view>
+</view>
+<view class="btn-area" wx:if="{{collect===false&&type=='2'}}" bindtap="collectT" >
+		<image src="../../assets/img/tabBar/collect.png" class="img_size"  >
+	</image>
+	<!-- <button class="publish" formType="submit">收藏</button> -->
+</view>
+<view class="btn-area" wx:if="{{collect===true&&type==='2'}}" bindtap="collectT" >
+	<image src="../../assets/img/tabBar/collect_select.png" class="img_size" >
+	</image>
+	<!-- <button class="publish" formType="submit">收藏</button> -->
+</view>

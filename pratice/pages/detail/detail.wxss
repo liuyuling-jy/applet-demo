@@ -1,0 +1,33 @@
+/* pages/detailItem/detailItem.wxss */
+/* pages/detail/detail.wxss */
+.formStyle {
+  padding: 20px 20px 60px 20px;
+  /* font-family: '楷体'; */
+}
+
+.section {
+  padding: 10px 0;
+}
+
+.section__title {
+  margin: 10px 0;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 35px;
+
+}
+
+.title {
+  font-weight: 400;
+}
+
+.btn-area {
+  position: fixed;
+  bottom: 20rpx;
+  right: 45%;
+}
+
+.img_size {
+  width: 100rpx;
+  height: 100rpx;
+}
