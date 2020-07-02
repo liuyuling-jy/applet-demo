@@ -117,6 +117,16 @@ Page({
     wx.navigateTo({
       url: '/pages/add/add?type=1&id=null',
     })
+    // wx.openSetting({
+    //   success (res) {
+    //     console.log(res.authSetting)
+    //     // res.authSetting = {
+    //     //   "scope.userInfo": true,
+    //     //   "scope.userLocation": true
+    //     // }
+    //   }
+    // })
+
   },
 
   // edit: function (event) {

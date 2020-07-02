@@ -14,6 +14,7 @@
 <view class='container'>
 	<!--Tab布局-->
 	<view class='title'>
+		<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
 		<view class='titleSel' bindtap='titleClick' data-idx='0'>
 			<text>Angulr</text>
 			<hr class="{{0 == currentIndex ? 'headerLineSel' : 'headerLineUnsel'}}" />

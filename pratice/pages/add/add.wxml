@@ -3,11 +3,11 @@
 	<form bindsubmit="formSubmit" bindreset="formReset">
 		<view class="section">
 			<view class="section__title">标题：</view>
-			<textarea bindblur="bindTextAreaBlur" placeholder="" auto-height maxlength="200" name="title" />
+			<textarea bindblur="bindTextAreaBlur" placeholder="" auto-height maxlength="200" name="title" value='{{form.title}}' />
 			</view>
 			<view class="section section_gap">
 			<view class="section__title">匿名：</view>
-			<radio-group name="anonymity">
+			<radio-group name="anonymity" value='{{form.anonymity}}'>
 				<label class="radio-group-label">
 					<radio value="1" />是</label>
 				<label  class="radio-group-label">
@@ -18,11 +18,11 @@
 	
 		<view class="section">
 			<view class="section__title">内容：</view>
-			<textarea bindblur="bindTextAreaBlur" placeholder="" auto-height maxlength="10000" name="desc"/>
+			<textarea bindblur="bindTextAreaBlur" placeholder="" auto-height maxlength="10000" value='{{form.desc}}' name="desc"/>
 			</view>
 		<view class="section section_gap">
 			<view class="section__title">分类：</view>
-			<radio-group name="classify">
+			<radio-group name="classify" value='{{form.classify}}'>
 				<label class="radio-group-label">
 					<radio value="0"  />Anguler</label>
 				<label class="radio-group-label">
@@ -31,11 +31,28 @@
 					<radio value="2"  />React</label>
 			</radio-group>
 		</view>
-
+		<!-- <view class="section section_gap">
+			<view class="section__title">附件：
+			<button bindtap="uploadimg">点击选择上传图</button>
+			</view>
+      <image src='{{source}}' class="img_style" />
+		</view> -->
 		<view class="btn-area">
 			<button class="publish" formType="submit">发布</button>
 			<!-- <button formType="reset">Reset</button> -->
 		</view>
 	</form>
-	<!-- <button class="publish" bindtap="publish">发布</button> -->
+	<dialog  id="modal"
+	  title='是否确认发布' 
+    content ='发布后可进行收藏' 
+    bind:cancelEvent="_cancelEvent"  
+    bind:confirmEvent="_confirmEvent"></dialog>
 </view>
+
+<!-- <slide-view class="slide" width="750" height="100" slideWidth="300">
+	<view class="left" slot="left">这里是插入到组内容2</view>
+	<view class="right" slot="right">
+		<view class="read">已读</view>
+		<view class="delete">删除</view>
+	</view>
+</slide-view> -->

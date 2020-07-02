@@ -141,15 +141,44 @@ Page({
   },
   collectT() {
     let coll = false;
-    if (this.data.collect === true) {
+    if (this.data.collect) {
       coll = false;
+      wx.request({
+        //项目的真正接口，通过字符串拼接方式实现
+        url: app.globalData.config.collectCancel,
+        // header: {
+        //   "content-type": "application/json;charset=UTF-8"
+        // },
+        data: {
+          itemId: this.data._id,
+          collectOpenId: wx.getStorageSync('openid')
+        },
+        method: 'post',
+        success: function (res) {
+          //参数值为res.data,直接将返回的数据传入
+          // doSuccess(res.data);
+          if (res.data.status === 200) {
+            wx.showToast({
+              title: "取消收藏成功",
+              icon: "success",
+              duration: 1000,
+              mask: false
+            })
+          } else {
+            wx.showToast({
+              title: "取消收藏失败",
+              icon: "none",
+              duration: 1000,
+              mask: false
+            })
+          }
+        },
+        fail: function () {
+          // doFail();
+        },
+      })
     } else {
       coll = true;
-    }
-    this.setData({
-      collect: coll
-    })
-    if (this.data.collect === true) {
       wx.request({
         //项目的真正接口，通过字符串拼接方式实现
         url: app.globalData.config.collectItem,
@@ -191,41 +220,8 @@ Page({
         },
       })
     }
-    if (this.data.collect === false) {
-      wx.request({
-        //项目的真正接口，通过字符串拼接方式实现
-        url: app.globalData.config.collectCancel,
-        // header: {
-        //   "content-type": "application/json;charset=UTF-8"
-        // },
-        data: {
-          itemId: this.data._id,
-          collectOpenId: wx.getStorageSync('openid')
-        },
-        method: 'post',
-        success: function (res) {
-          //参数值为res.data,直接将返回的数据传入
-          // doSuccess(res.data);
-          if (res.data.status === 200) {
-            wx.showToast({
-              title: "取消收藏成功",
-              icon: "success",
-              duration: 1000,
-              mask: false
-            })
-          } else {
-            wx.showToast({
-              title: "取消收藏失败",
-              icon: "none",
-              duration: 1000,
-              mask: false
-            })
-          }
-        },
-        fail: function () {
-          // doFail();
-        },
-      })
-    }
+    this.setData({
+      collect: coll
+    })
   }
 })
